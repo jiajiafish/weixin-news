@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class='title-wrapper'>
+<view class='title-item' wx:for="{{titles}}">
+ <view class='title-text'> {{item}}</view>
+
+</view>
+
+
+</view>
+<view class='slider-wrapper'>
+<image  class='slider-bigger' src='/images/slider-big.jpg'></image>
+<image  class='slider-little' src='/images/slider-big.jpg'>
+<view class='hot-title'>即使你还没有全部完成，也可以提交项目来获取一些建议和反馈。</view>
+<view class='hot-author'>即使dd你还没有全部完成，也可以提交项目来获取一些建议和反馈。</view>
+</image>
+</view>
