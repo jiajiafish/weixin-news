@@ -1,0 +1,8 @@
+<view class='detail'>
+  <view class='detail-title'>应用包含一个主界面，来展示不同分类下的新闻列表</view>
+
+  <view class='hot-author-wrapper'>
+    <view class='news-author'>新华社</view>
+    <view class='news-time'>10:22</view>
+  </view>
+</view>

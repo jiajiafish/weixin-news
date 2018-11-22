@@ -1,0 +1,19 @@
+.hot-author-wrapper {
+  display: flex;
+  margin-top: 5rpx;
+}
+
+
+.news-author {
+  color: #aaa;
+  font-size: 25rpx;
+  line-height: 35rpx;
+  margin-right: 50rpx;
+}
+
+.news-time {
+  color: #aaa;
+  font-size: 25rpx;
+  line-height: 35rpx;
+  margin-right: 50rpx;
+}

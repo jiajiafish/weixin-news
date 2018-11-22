@@ -10,7 +10,7 @@
 }
 
 .title-text {
-  color: #fff;
+  color: #ddd;
   font-size: 30rpx;
   line-height: 42rpx;
   font-weight: bold;
@@ -55,29 +55,13 @@
   margin-right: 50rpx;
 }
 
-.news-author {
-  color: #aaa;
-  font-size: 25rpx;
-  line-height: 35rpx;
-  margin-right: 50rpx;
-}
 
-.news-time {
-  color: #aaa;
-  font-size: 25rpx;
-  line-height: 35rpx;
-  margin-right: 50rpx;
-}
 
 .news-author-wrapper {
   margin-top: 30rpx;
   display: flex;
 }
 
-.hot-author-wrapper {
-  display: flex;
-  margin-top: 5rpx;
-}
 
 .news-items-wrapper {
   margin-left: 25rpx;

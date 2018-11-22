@@ -7,10 +7,11 @@
 
 
 </view>
-<view class='slider-wrapper'>
+<view class='slider-wrapper' bindtap='onTapDetail'>
   <image class='slider-bigger' src='/images/slider-big.jpg'></image>
   <image class='slider-little' src='/images/slider-big.jpg'>
-    <view class='hot'>
+    <view class='hot'  >
+
       <view class='hot-title'>即使你还没有全部完成，也可以提交项目来获取一些建议和反馈。</view>
       <view class='hot-author-wrapper'>
         <view class='news-author'>新华社</view>
