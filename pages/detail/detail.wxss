@@ -5,8 +5,28 @@
 
 .detail-title{
   font-size: 40rpx;
-  font-weight: bold;
+  font-weight: 500;
 }
 .hot-author-wrapper{
   padding-top: 25rpx;
+}
+.main-p{
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.para-image{
+  width: 100%;
+}
+
+.paragraph{
+  padding-top: 30rpx;
+}
+
+.news-readcount{
+    color: #aaa;
+  font-size: 25rpx;
+  line-height: 35rpx;
+  margin-right: 50rpx;
+  padding-left: 300rpx;
 }
