@@ -30,3 +30,8 @@
   margin-right: 50rpx;
   padding-left: 300rpx;
 }
+
+.para-image{
+padding-top: 30rpx;
+padding-bottom: 30rpx;
+}
