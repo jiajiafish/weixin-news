@@ -2,20 +2,29 @@
   position: fixed;
   display: flex;
   background-color: #35a2e5;
+  z-index: 99;
+
 }
 
 .title-item {
-  width: 108rpx;
+  width: 68rpx;
+  margin: 0rpx 20rpx;
   text-align: center;
+}
+.active{
+  color: #fff;
+  border-bottom: 10rpx solid rgb(255, 255, 255);
+
 }
 
 .title-text {
-  color: #ddd;
+  color: rgb(255, 255, 255);
   font-size: 30rpx;
   line-height: 42rpx;
   font-weight: bold;
   padding-bottom: 30rpx;
 }
+
 
 .slider-wrapper {
   padding-top: 72rpx;
@@ -39,6 +48,7 @@
   z-index: 1;
   margin: 25rpx 25rpx;
   border-radius: 8rpx;
+
 }
 
 .hot {

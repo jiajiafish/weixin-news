@@ -13,6 +13,8 @@
 .main-p{
   font-size: 30rpx;
   line-height: 42rpx;
+    padding-top: 30rpx;
+  padding-bottom: 30rpx;
 }
 
 .para-image{
@@ -21,6 +23,7 @@
 
 .paragraph{
   padding-top: 30rpx;
+  padding-bottom: 30rpx;
 }
 
 .news-readcount{
@@ -34,4 +37,8 @@
 .para-image{
 padding-top: 30rpx;
 padding-bottom: 30rpx;
+}
+
+.bold{
+  font-weight: bold;
 }

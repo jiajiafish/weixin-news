@@ -1,20 +1,28 @@
 //index.js
 //获取应用实例
+const tagMap = ['gn', 'gj', 'cj', 'yl', 'js', 'ty', 'other']
+
 
 Page({
   data: {
     titles: ['国内', '国际', '财经', '娱乐', '军事', '体育', '其他'],
-    newsList: [],
-    newsHot:{},
+    newsHot: {},
+    tagsSelect: 0,
+
   },
-  onTapDetail() {
+
+  onTapDetail: function(event) {
+    console.log(event.currentTarget.dataset.dest)
+    let dest = event.currentTarget.dataset.dest
     wx.navigateTo({
-      url: '/pages/detail/detail',
+      url: '/pages/detail/detail?dest=' + dest,
     })
   },
-  getNewsList(type) {
+
+
+  getNewsList(type,callback) {
     wx.request({
-      url: 'https://test-miniprogram.com/api/news/list', //仅为示例，并非真实的接口地址
+      url: 'https://test-miniprogram.com/api/news/list',
       data: {
         type: type,
       },
@@ -30,25 +38,61 @@ Page({
 
 
       },
-      // complete: () => {
-      //   callback && callback()
-      // }
+      complete: () => {
+        callback && callback()
+      }
     })
   },
-  setHot(result){
+  setHot(result) {
     let hot = result[0]
-    
+
     console.log(hot)
     this.setData({
-      newsHot:hot
+      newsHot: {
+        id: hot['id'],
+        title: hot['title'],
+        firstImage: hot['firstImage'] ? hot['firstImage'] : "/images/750400.jpg",
+        source: hot['source'] ? hot['source'] : "佚名",
+        date: hot['date'].substring(11, 16)
+      }
     })
   },
-  setNewsList() {
+  selectTag: function(event) {
+    console.log(event.currentTarget.dataset.index)
+    let index = event.currentTarget.dataset.index
+    this.getNewsList(tagMap[index])
+    this.setData({
+      tagsSelect: index,
+    })
+  },
+  setNewsList(result) {
+    result.shift()
 
+    let newsList = []
+    // 将数组中的值一一的进行修改满足案例要求
+    for (let i = 0; i < result.length; i++) {
+      newsList.push({
+        id: result[i]['id'],
+        title: result[i]['title'],
+        firstImage: result[i]['firstImage'] ? result[i]['firstImage'] : "/images/750400.jpg",
+        source: result[i]['source'] ? result[i]['source'] : "佚名",
+        date: result[i]['date'].substring(11, 16)
+      })
+    }
+    console.log(newsList)
+    this.setData({
+      newsList: newsList
+    })
   },
   onLoad() {
     this.getNewsList("gn")
   },
-  
+  onPullDownRefresh() {
+    console.log(this.tagsSelect)
+    this.getNewsList(tagMap[this.tagsSelect],() => {
+      wx.stopPullDownRefresh()
+    })
+  },
+
 
 })

@@ -1,13 +1,13 @@
 <!--index.wxml-->
 <view class='title-wrapper'>
-  <view class='title-item' wx:for="{{titles}}">
-    <view class='title-text' > {{item}}</view>
+  <view data-index = "{{index}}" class="title-item {{tagsSelect==index?'active':''}}" wx:for="{{titles}}" wx:for-index="index" wx:for-item="item" bindtap="selectTag">
+    <view class='title-text'> {{item}}</view>
 
   </view>
 
 
 </view>
-<view class='slider-wrapper' bindtap='onTapDetail'>
+<view class='slider-wrapper' data-dest="{{newsHot.id}}"  bindtap='onTapDetail'>
   <image class='slider-bigger' src='{{newsHot.firstImage}}'></image>
   <image class='slider-little' src='{{newsHot.firstImage}}'>
     <view class='hot'>
@@ -24,73 +24,20 @@
 
 <view class='news-items-wrapper'>
   <scroll-view scroll-y>
-    <view class='news-item'>
+    <view class='news-item' data-dest="{{item.id}}" bindtap='onTapDetail' wx:for="{{newsList}}" wx:for-index="index" wx:for-item="item">
       <view class='news-item-left'>
-        <view class='news-title'>即使你还没有全部完成，也可以提交项目来获取一</view>
+        <view class='news-title'>{{item.title}}</view>
         <view class='news-author-wrapper'>
-          <view class='news-author'>新华社</view>
-          <view class='news-time'>10:22</view>
+          <view class='news-author'>{{item.source}}</view>
+          <view class='news-time'>{{item.date}}</view>
         </view>
       </view>
       <view class='news-item-right'>
-        <image class='item-right-pic' src='/images/slider-big.jpg'></image>
-      </view>
-
-    </view>
-
-    <view class='news-item'>
-      <view class='news-item-left'>
-        <view class='news-title'>即使你还没有全部完成，也可以提交项目来获取一</view>
-        <view class='news-author-wrapper'>
-          <view class='news-author'>新华社</view>
-          <view class='news-time'>10:22</view>
-        </view>
-      </view>
-      <view class='news-item-right'>
-        <image class='item-right-pic' src='/images/slider-big.jpg'></image>
-      </view>
-
-    </view>
-    <view class='news-item'>
-      <view class='news-item-left'>
-        <view class='news-title'>即使你还没有全部完成，也可以提交项目来获取一</view>
-        <view class='news-author-wrapper'>
-          <view class='news-author'>新华社</view>
-          <view class='news-time'>10:22</view>
-        </view>
-      </view>
-      <view class='news-item-right'>
-        <image class='item-right-pic' src='/images/slider-big.jpg'></image>
-      </view>
-
-    </view>
-    <view class='news-item'>
-      <view class='news-item-left'>
-        <view class='news-title'>即使你还没有全部完成，也可以提交项目来获取一</view>
-        <view class='news-author-wrapper'>
-          <view class='news-author'>新华社</view>
-          <view class='news-time'>10:22</view>
-        </view>
-      </view>
-      <view class='news-item-right'>
-        <image class='item-right-pic' src='/images/slider-big.jpg'></image>
-      </view>
-
-    </view>
-
-        <view class='news-item'>
-      <view class='news-item-left'>
-        <view class='news-title'>即使你还没有全部完成，也可以提交项目来获取一</view>
-        <view class='news-author-wrapper'>
-          <view class='news-author'>新华社</view>
-          <view class='news-time'>10:22</view>
-        </view>
-      </view>
-      <view class='news-item-right'>
-        <image class='item-right-pic' src='/images/slider-big.jpg'></image>
+        <image class='item-right-pic' src='{{item.firstImage}}'></image>
       </view>
 
     </view>
   </scroll-view>
 
 </view>
+
