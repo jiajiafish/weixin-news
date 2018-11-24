@@ -31,7 +31,7 @@
   font-size: 25rpx;
   line-height: 35rpx;
   margin-right: 50rpx;
-  padding-left: 300rpx;
+  padding-left: 150rpx;
 }
 
 .para-image{

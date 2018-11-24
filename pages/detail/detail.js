@@ -43,7 +43,7 @@ Page({
             title: result['title'],
             firstImage: result['firstImage'] ? result['firstImage'] : "/images/750400.jpg",
             source: result['source'] ? result['source'] : "佚名",
-            date: result['date'].substring(11, 16)
+            date: result['date'].substring(2, 10) +"/"+ result['date'].substring(11, 16)
           },
           newsPara: result.content
         })
@@ -53,6 +53,9 @@ Page({
       },
       complete: () => {
         callback && callback()
+      },
+      fail: () => {
+        console.log("获取数据失败")
       }
     })
   },
@@ -88,15 +91,15 @@ Page({
   },
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
+   * 页面相关事件处理函数--监听用户下拉动作,我会禁用只是给自己使用，谢谢老师
    */
   onPullDownRefresh() {
-    console.log(this.tagsSelect)
+    console.log(this.data.tagsSelect)
     console.log("############################")
     console.log(dest)
 
     console.log("############################")
-    this.getNewsDetail(this.dest, () => {
+    this.getNewsDetail(this.data.dest, () => {
       wx.stopPullDownRefresh()
     })
   },

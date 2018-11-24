@@ -40,6 +40,9 @@ Page({
       },
       complete: () => {
         callback && callback()
+      },
+      fail:()=>{
+        console.log("获取数据失败")
       }
     })
   },
@@ -53,7 +56,7 @@ Page({
         title: hot['title'],
         firstImage: hot['firstImage'] ? hot['firstImage'] : "/images/750400.jpg",
         source: hot['source'] ? hot['source'] : "佚名",
-        date: hot['date'].substring(11, 16)
+        date: hot['date'].substring(2, 10) + "/" +hot['date'].substring(11, 16)
       }
     })
   },
@@ -76,7 +79,7 @@ Page({
         title: result[i]['title'],
         firstImage: result[i]['firstImage'] ? result[i]['firstImage'] : "/images/750400.jpg",
         source: result[i]['source'] ? result[i]['source'] : "佚名",
-        date: result[i]['date'].substring(11, 16)
+        date: result[i]['date'].substring(2, 10) + "/" +result[i]['date'].substring(11, 16)
       })
     }
     console.log(newsList)
@@ -89,7 +92,7 @@ Page({
   },
   onPullDownRefresh() {
     console.log(this.tagsSelect)
-    this.getNewsList(tagMap[this.tagsSelect],() => {
+    this.getNewsList(tagMap[this.data.tagsSelect],() => {
       wx.stopPullDownRefresh()
     })
   },
