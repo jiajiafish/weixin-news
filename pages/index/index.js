@@ -43,6 +43,9 @@ Page({
       },
       fail:()=>{
         console.log("获取数据失败")
+        wx.showToast({
+          title: '加载失败',
+        })
       }
     })
   },
