@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dest : 1523074607642
   },
 
   /**
@@ -16,9 +15,9 @@ Page({
 
     console.log(options)
     this.getNewsDetail(options.dest);
-    setData({
-      dest: options.dest,
-    })
+    // setData({
+    //   dest: options.dest,
+    // })
   },
 
   /**
@@ -93,19 +92,7 @@ Page({
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作,我会禁用只是给自己使用，谢谢老师
-   */
-  onPullDownRefresh() {
-    console.log(this.data.tagsSelect)
-    console.log("############################")
-    console.log(dest)
 
-    console.log("############################")
-    this.getNewsDetail(this.data.dest, () => {
-      wx.stopPullDownRefresh()
-    })
-  },
 
   /**
    * 页面上拉触底事件的处理函数
